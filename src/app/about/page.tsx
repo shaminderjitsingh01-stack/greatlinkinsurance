@@ -3,14 +3,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us | GreatLink Insurance",
   description:
-    "Learn about GreatLink Insurance - Singapore's trusted corporate insurance broker since 2015. MAS licensed with a commitment to excellence.",
+    "Learn about GreatLink Insurance - Singapore's trusted corporate insurance broker. MAS licensed with a commitment to excellence.",
 };
 
 const values = [
   {
     title: "Integrity",
     description:
-      "We uphold the highest ethical standards in all our dealings, ensuring transparency and honesty in every interaction with our clients and partners.",
+      "We conduct our business with the highest ethical standards, ensuring complete transparency and accountability in every transaction.",
     icon: (
       <svg
         className="h-8 w-8 text-[#0D9488]"
@@ -28,9 +28,9 @@ const values = [
     ),
   },
   {
-    title: "Excellence",
+    title: "Honesty",
     description:
-      "We strive for excellence in everything we do, from providing expert advice to delivering exceptional service that exceeds expectations.",
+      "We believe in honest communication, providing straightforward advice and clear explanations without hidden agendas.",
     icon: (
       <svg
         className="h-8 w-8 text-[#0D9488]"
@@ -42,13 +42,13 @@ const values = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
         />
       </svg>
     ),
   },
   {
-    title: "Client-First",
+    title: "Customer Centric",
     description:
       "Your needs are our priority. We listen, understand, and tailor solutions that best protect your business interests and assets.",
     icon: (
@@ -68,9 +68,9 @@ const values = [
     ),
   },
   {
-    title: "Innovation",
+    title: "Excellence of Trust",
     description:
-      "We embrace technology and innovative solutions to streamline processes and deliver modern insurance solutions for today's businesses.",
+      "We strive to be a trusted partner you can rely on, building lasting relationships through consistent delivery and dependable service.",
     icon: (
       <svg
         className="h-8 w-8 text-[#0D9488]"
@@ -82,7 +82,7 @@ const values = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
         />
       </svg>
     ),
@@ -122,7 +122,7 @@ export default function AboutPage() {
             About GreatLink Insurance
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl text-teal-100">
-            Your trusted corporate insurance partner in Singapore since 2015
+            Your trusted corporate insurance partner in Singapore
           </p>
         </div>
       </section>
@@ -137,33 +137,30 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-lg text-gray-600">
                 <p>
-                  Established in 2015, GreatLink Insurance has grown to become
-                  one of Singapore&apos;s most trusted corporate insurance
-                  brokers. From our humble beginnings, we have built a
-                  reputation for delivering exceptional insurance solutions
-                  tailored to the unique needs of businesses across various
-                  industries.
+                  Greatlink Insurance Agency Pte Ltd has been applying our experiences
+                  and expertise via linking our customers to reputable insurers, helping
+                  them understand and protecting them from various risks, giving them a
+                  safety net to move forward with their life and businesses with peace of mind.
                 </p>
                 <p>
-                  Our team of experienced professionals brings together decades
-                  of combined expertise in the insurance industry, allowing us
-                  to navigate complex coverage requirements and secure the best
-                  possible terms for our clients.
+                  Our key clients are from sectors of the construction engineering,
+                  logistics, and motor trade industry. These sectors demand fast,
+                  reliable and value for money insurance quotes. We strive to be the
+                  leader in performing our core competencies.
                 </p>
                 <p>
-                  Today, we proudly serve hundreds of corporate clients across
-                  Singapore, from SMEs to multinational corporations, providing
-                  comprehensive insurance coverage that protects their most
-                  valuable assets.
+                  Today, Greatlink Insurance Agency Pte Ltd maintains a strong and
+                  united team, guided by our core values of integrity, honesty,
+                  customer centric, and excellence of trust.
                 </p>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="text-6xl font-bold text-[#0D9488]">9+</div>
+                  <div className="text-5xl font-bold text-[#0D9488]">Your Trusted</div>
                   <div className="mt-2 text-xl text-gray-600">
-                    Years of Excellence
+                    Insurance Partner
                   </div>
                 </div>
               </div>

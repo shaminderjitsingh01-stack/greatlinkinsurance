@@ -362,11 +362,11 @@ export default function ContactPage() {
                     <div className="ml-4">
                       <h3 className="font-semibold">Office Address</h3>
                       <p className="mt-1 text-teal-100">
-                        123 Robinson Road
+                        8 Burn Road, #14-08
                         <br />
-                        #08-01 Robinson Centre
+                        Trivex
                         <br />
-                        Singapore 068902
+                        Singapore 369977
                       </p>
                     </div>
                   </div>
@@ -391,10 +391,10 @@ export default function ContactPage() {
                     <div className="ml-4">
                       <h3 className="font-semibold">Phone</h3>
                       <a
-                        href="tel:+6562345678"
+                        href="tel:+6560470353"
                         className="mt-1 text-teal-100 hover:text-white transition-colors"
                       >
-                        +65 6234 5678
+                        +65 9111 6707
                       </a>
                     </div>
                   </div>
@@ -419,10 +419,10 @@ export default function ContactPage() {
                     <div className="ml-4">
                       <h3 className="font-semibold">Email</h3>
                       <a
-                        href="mailto:info@greatlinkinsurance.com"
+                        href="mailto:contact@greatlinkinsurance.com"
                         className="mt-1 text-teal-100 hover:text-white transition-colors"
                       >
-                        info@greatlinkinsurance.com
+                        contact@greatlinkinsurance.com
                       </a>
                     </div>
                   </div>
@@ -441,12 +441,12 @@ export default function ContactPage() {
                     <div className="ml-4">
                       <h3 className="font-semibold">WhatsApp</h3>
                       <a
-                        href="https://wa.me/6591234567"
+                        href="https://wa.me/6591116707"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-1 text-teal-100 hover:text-white transition-colors inline-flex items-center"
                       >
-                        +65 9123 4567
+                        +65 9111 6707
                         <svg
                           className="ml-1 h-4 w-4"
                           fill="none"
@@ -495,38 +495,19 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Google Maps Placeholder */}
+              {/* Google Maps */}
               <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <div className="bg-gray-200 h-64 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <svg
-                      className="mx-auto h-12 w-12 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <p className="mt-2 text-gray-500">
-                      Google Maps Embed
-                      <br />
-                      <span className="text-sm">
-                        (Replace with actual embed code)
-                      </span>
-                    </p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.733949743521!2d103.88056972173004!3d1.3358563951638118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da13369ec6f7ab%3A0xa24aa08c0cabfead!2sGreatlink%20Insurance%20Agency%20Pte%20Ltd!5e0!3m2!1sen!2ssg!4v1770112112839!5m2!1sen!2ssg"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="GreatLink Insurance Office Location"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>

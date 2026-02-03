@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "GreatLink Insurance | Trusted Insurance Broker in Singapore",
-    description: "Your trusted insurance partner since 2015. Comprehensive coverage for individuals and businesses.",
+    description: "Your trusted insurance partner in Singapore. Comprehensive coverage for individuals and businesses.",
     url: "https://greatlinkinsurance.sg",
     siteName: "GreatLink Insurance",
     locale: "en_SG",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GreatLink Insurance | Trusted Insurance Broker in Singapore",
-    description: "Your trusted insurance partner since 2015. Comprehensive coverage for individuals and businesses.",
+    description: "Your trusted insurance partner in Singapore. Comprehensive coverage for individuals and businesses.",
   },
   robots: {
     index: true,

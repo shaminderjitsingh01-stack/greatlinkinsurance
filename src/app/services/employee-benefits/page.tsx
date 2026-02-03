@@ -52,7 +52,7 @@ export default function EmployeeBenefitsPage() {
                 Comprehensive group insurance solutions to protect your most valuable asset - your employees.
               </p>
               <Link
-                href="/contact?service=employee-benefits"
+                href="/quote"
                 className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
               >
                 Get a Quote
@@ -150,7 +150,7 @@ export default function EmployeeBenefitsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact?service=employee-benefits"
+              href="/quote"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
             >
               <FileText className="w-5 h-5 mr-2" />

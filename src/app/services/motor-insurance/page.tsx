@@ -52,7 +52,7 @@ export default function MotorInsurancePage() {
                 Comprehensive protection for your vehicles on Singapore roads. Drive with confidence knowing you are covered.
               </p>
               <Link
-                href="/contact?service=motor-insurance"
+                href="/quote"
                 className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
               >
                 Get a Quote
@@ -142,7 +142,7 @@ export default function MotorInsurancePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact?service=motor-insurance"
+              href="/quote"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
             >
               <FileText className="w-5 h-5 mr-2" />

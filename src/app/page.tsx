@@ -140,8 +140,8 @@ const testimonials = [
 // Trust badges
 const trustBadges = [
   { icon: BadgeCheck, text: "Licensed by MAS" },
-  { icon: Award, text: "10+ Years Experience" },
-  { icon: Users, text: "1000+ Clients" },
+  { icon: Award, text: "Trusted Broker" },
+  { icon: Users, text: "Expert Team" },
 ];
 
 export default function Home() {
@@ -177,7 +177,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-xl sm:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto"
             >
-              Singapore&apos;s trusted corporate insurance broker since 2015
+              Singapore&apos;s trusted corporate insurance broker
             </motion.p>
 
             <motion.div
@@ -441,7 +441,7 @@ export default function Home() {
                 Contact Us Today
               </Link>
               <a
-                href="https://wa.me/6591234567"
+                href="https://wa.me/6591116707"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#0D9488] transition-all duration-300"

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const WHATSAPP_NUMBER = '65XXXXXXXX'; // Placeholder number
+const WHATSAPP_NUMBER = '6591116707';
 const PRE_FILLED_MESSAGE = 'Hello! I would like to enquire about your insurance services.';
 
 export default function WhatsAppButton() {

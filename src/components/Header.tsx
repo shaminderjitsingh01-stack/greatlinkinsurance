@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Shield } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const services = [
   { name: 'Motor Insurance', href: '/services/motor-insurance' },
@@ -38,21 +39,29 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg'
-          : 'bg-white/60 backdrop-blur-md'
+          ? 'bg-white shadow-lg'
+          : 'bg-white/90 backdrop-blur-md'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <Shield className="w-6 h-6 text-white" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/logo.png"
+              alt="GreatLink Insurance Logo"
+              width={50}
+              height={50}
+              className="w-12 h-12 object-contain"
+            />
+            <div className="hidden sm:block">
+              <span className="text-sm lg:text-base font-bold text-gray-800 leading-tight block">
+                GREATLINK INSURANCE
+              </span>
+              <span className="text-xs lg:text-sm font-semibold text-teal-600 leading-tight block">
+                AGENCY PTE LTD
+              </span>
             </div>
-            <span className="text-xl lg:text-2xl font-bold">
-              <span className="text-teal-600">Great</span>
-              <span className="text-gray-800">Link</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -113,7 +122,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/quote"
-              className="hidden sm:inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-200"
+              className="hidden sm:inline-flex items-center px-5 py-2.5 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700 hover:shadow-lg transition-all duration-200"
             >
               Get a Quote
             </Link>
@@ -185,7 +194,7 @@ export default function Header() {
             {/* Mobile CTA */}
             <Link
               href="/quote"
-              className="sm:hidden mt-2 mx-4 px-5 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-lg shadow-md text-center"
+              className="sm:hidden mt-2 mx-4 px-5 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Get a Quote

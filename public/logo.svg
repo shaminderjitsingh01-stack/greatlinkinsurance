@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Teal ring -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#0D9488" stroke-width="6"/>
+  <!-- Inner white circle -->
+  <circle cx="50" cy="50" r="38" fill="white"/>
+  <!-- Brown flame/M shape -->
+  <path d="M35 70 L35 45 Q35 30 50 25 Q65 30 65 45 L65 70 L55 70 L55 50 Q55 42 50 38 Q45 42 45 50 L45 70 Z" fill="#5D4037"/>
+</svg>
