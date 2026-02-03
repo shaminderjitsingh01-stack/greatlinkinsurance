@@ -149,14 +149,22 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background gradient and pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-teal-100">
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d9488' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-900/70 to-teal-900/80" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -168,14 +176,14 @@ export default function Home() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
             >
               Protect What Matters Most
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl sm:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto"
+              className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
             >
               Singapore&apos;s trusted corporate insurance broker
             </motion.p>
@@ -193,7 +201,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-[#0D9488] border-2 border-[#0D9488] rounded-lg hover:bg-[#0D9488] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#0D9488] transition-all duration-300"
               >
                 Our Services
               </Link>
@@ -207,9 +215,9 @@ export default function Home() {
               {trustBadges.map((badge, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-gray-700"
+                  className="flex items-center gap-2 text-white/90"
                 >
-                  <badge.icon className="w-5 h-5 text-[#0D9488]" />
+                  <badge.icon className="w-5 h-5 text-teal-400" />
                   <span className="font-medium">{badge.text}</span>
                 </div>
               ))}
