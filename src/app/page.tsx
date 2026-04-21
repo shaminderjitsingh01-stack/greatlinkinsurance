@@ -16,6 +16,9 @@ import {
   Phone,
   MessageCircle,
   ChevronRight,
+  ClipboardCheck,
+  ArrowRight,
+  Calendar,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -63,10 +66,10 @@ const services = [
   },
   {
     icon: Plane,
-    title: "Travel Insurance",
+    title: "Domestic Maid Insurance",
     description:
-      "Corporate travel coverage for your employees, including medical emergencies and trip cancellation.",
-    href: "/services/travel",
+      "Comprehensive coverage for your domestic helpers, including medical expenses, personal accident, and liability protection.",
+    href: "/services/domestic-maid",
   },
   {
     icon: Wrench,
@@ -139,7 +142,7 @@ const testimonials = [
 
 // Trust badges
 const trustBadges = [
-  { icon: BadgeCheck, text: "Licensed by MAS" },
+  { icon: BadgeCheck, text: "Licensed by GIA" },
   { icon: Award, text: "Trusted Broker" },
   { icon: Users, text: "Expert Team" },
 ];
@@ -178,14 +181,14 @@ export default function Home() {
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
             >
-              Protect What Matters Most
+              Solving Your Insurance Needs
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
             >
-              Singapore&apos;s trusted corporate insurance broker
+              Singapore trusted corporate insurance agency
             </motion.p>
 
             <motion.div
@@ -199,12 +202,15 @@ export default function Home() {
                 Get a Quote
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link
-                href="/services"
+              <a
+                href="https://calendly.com/greatlinkinsurance"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#0D9488] transition-all duration-300"
               >
-                Our Services
-              </Link>
+                <Calendar className="mr-2 w-5 h-5" />
+                Book a Meeting
+              </a>
             </motion.div>
 
             {/* Trust Badges */}
@@ -413,50 +419,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0D9488] to-[#115E59]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Get a Quote & CTA Section (Merged) */}
+      <section className="relative py-20 sm:py-28 overflow-hidden">
+        {/* Multi-layer gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0c4a44] to-[#0D9488]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(13,148,136,0.4),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(45,212,191,0.2),transparent_60%)]" />
+
+        {/* Decorative blurred orbs */}
+        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-teal-400/15 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-teal-500/5 rounded-full blur-[100px]" />
+
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M60 0H0v60\' fill=\'none\' stroke=\'%23fff\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-5xl mx-auto"
           >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl font-bold text-white mb-6"
-            >
-              Ready to Get Protected?
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl text-teal-100 mb-10"
-            >
-              Schedule a free consultation with our insurance experts. We&apos;ll
-              analyze your needs and provide tailored recommendations at no
-              obligation.
-            </motion.p>
+            {/* Heading */}
+            <motion.div variants={fadeInUp} className="text-center mb-14 sm:mb-18">
+              <span className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 text-teal-300 text-sm font-semibold rounded-full mb-6 border border-white/15 backdrop-blur-sm">
+                <ClipboardCheck className="w-4 h-4" />
+                Quick & Easy
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+                Ready to Get Protected?
+              </h2>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+                Answer a few quick questions and get personalized insurance recommendations tailored to your business needs.
+              </p>
+            </motion.div>
+
+            {/* 3-Step Cards */}
             <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mb-14 sm:mb-18"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-[#0D9488] bg-white rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                Contact Us Today
-              </Link>
-              <a
-                href="https://wa.me/6591116707"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-[#0D9488] transition-all duration-300"
-              >
-                <MessageCircle className="mr-2 w-5 h-5" />
-                WhatsApp Us
-              </a>
+              {[
+                { step: "1", title: "Tell Us About You", desc: "Business type, size, and industry", icon: Users },
+                { step: "2", title: "Select Your Needs", desc: "Choose from 6 insurance categories", icon: Shield },
+                { step: "3", title: "Get Recommendations", desc: "Receive a tailored coverage plan", icon: ClipboardCheck },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={scaleIn}
+                  className="group relative bg-white/[0.07] backdrop-blur-md border border-white/15 rounded-2xl p-8 text-center hover:bg-white/[0.12] hover:border-teal-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10"
+                >
+                  {/* Connector line between cards (hidden on mobile) */}
+                  {i < 2 && (
+                    <div className="hidden sm:block absolute top-1/2 -right-3 sm:-right-4 w-6 sm:w-8 h-[2px] bg-gradient-to-r from-white/30 to-white/10 z-10" />
+                  )}
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-teal-400 to-emerald-500 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-lg shadow-teal-500/40 ring-4 ring-gray-900/30">
+                    {item.step}
+                  </div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-white/15 to-white/5 rounded-2xl flex items-center justify-center mx-auto mb-5 mt-3 group-hover:from-white/25 group-hover:to-white/10 transition-all duration-500">
+                    <item.icon className="w-8 h-8 text-teal-300 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div variants={fadeInUp} className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/quote"
+                  className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-gray-900 bg-gradient-to-r from-white to-gray-100 rounded-xl hover:from-gray-50 hover:to-white transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl transform hover:-translate-y-1"
+                >
+                  <ClipboardCheck className="mr-2 w-5 h-5 text-[#0D9488]" />
+                  Get a Quote
+                  <ArrowRight className="ml-2 w-5 h-5 text-[#0D9488]" />
+                </Link>
+                <a
+                  href="https://calendly.com/greatlinkinsurance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
+                >
+                  <Calendar className="mr-2 w-5 h-5" />
+                  Book a Meeting
+                </a>
+              </div>
+              <p className="text-white/40 text-sm mt-6">No obligation. Takes under 2 minutes.</p>
             </motion.div>
           </motion.div>
         </div>

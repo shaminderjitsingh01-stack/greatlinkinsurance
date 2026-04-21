@@ -89,28 +89,6 @@ const values = [
   },
 ];
 
-const teamMembers = [
-  {
-    name: "Team Member 1",
-    role: "Managing Director",
-    placeholder: true,
-  },
-  {
-    name: "Team Member 2",
-    role: "Senior Account Manager",
-    placeholder: true,
-  },
-  {
-    name: "Team Member 3",
-    role: "Claims Specialist",
-    placeholder: true,
-  },
-  {
-    name: "Team Member 4",
-    role: "Client Relations Manager",
-    placeholder: true,
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -137,10 +115,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-lg text-gray-600">
                 <p>
-                  Greatlink Insurance Agency Pte Ltd has been applying our experiences
-                  and expertise via linking our customers to reputable insurers, helping
-                  them understand and protecting them from various risks, giving them a
-                  safety net to move forward with their life and businesses with peace of mind.
+                  With more than 10 years of experience in the industry, Greatlink Insurance Agency Pte Ltd has been applying our expertise via linking our customers to reputable insurers, helping them understand and protecting them from various risks, giving them a safety net to move forward with their life and businesses with peace of mind.
                 </p>
                 <p>
                   Our key clients are from sectors of the construction engineering,
@@ -216,158 +191,56 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Licenses and Accreditations Section */}
       <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Meet Our Team
+              Licenses &amp; Accreditations
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Dedicated professionals committed to your success
+              Fully licensed and accredited for your peace of mind
             </p>
           </div>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="rounded-xl bg-white p-6 text-center shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center">
-                  <svg
-                    className="h-16 w-16 text-[#0D9488]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-gray-900">
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-[#0D9488]">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Licenses and Accreditations Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Licenses & Accreditations
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Fully licensed and regulated for your peace of mind
-            </p>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="rounded-xl bg-gradient-to-br from-[#0D9488] to-[#115E59] p-8 text-center text-white">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
-                <svg
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-xl font-semibold">MAS Licensed</h3>
+              <h3 className="mt-4 text-xl font-semibold">Regulated by GIA</h3>
               <p className="mt-2 text-teal-100">
-                Licensed by the Monetary Authority of Singapore as a registered
-                insurance broker
+                Licensed and regulated by the General Insurance Association of Singapore
               </p>
             </div>
             <div className="rounded-xl bg-white p-8 text-center shadow-md border border-gray-100">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
-                <svg
-                  className="h-8 w-8 text-[#0D9488]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
+                <svg className="h-8 w-8 text-[#0D9488]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                SIBA Member
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Proud member of the Singapore Insurance Brokers Association
-              </p>
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">Agency Excellence Award 2024</h3>
+              <p className="mt-2 text-gray-600">China Taiping Insurance</p>
             </div>
             <div className="rounded-xl bg-white p-8 text-center shadow-md border border-gray-100">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
-                <svg
-                  className="h-8 w-8 text-[#0D9488]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                  />
+                <svg className="h-8 w-8 text-[#0D9488]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                ISO Certified
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Committed to maintaining international quality management
-                standards
-              </p>
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">Agency Excellence Award 2025</h3>
+              <p className="mt-2 text-gray-600">China Taiping Insurance</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Logos Section */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our Insurance Partners
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              We work with leading insurers to bring you the best coverage
-              options
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-            {[1, 2, 3, 4, 5, 6].map((index) => (
-              <div
-                key={index}
-                className="flex h-24 items-center justify-center rounded-lg bg-white p-4 shadow-sm border border-gray-100"
-              >
-                <div className="text-center">
-                  <div className="h-12 w-24 rounded bg-gray-200 flex items-center justify-center">
-                    <span className="text-xs text-gray-500">Partner Logo</span>
-                  </div>
-                </div>
+            <div className="rounded-xl bg-white p-8 text-center shadow-md border border-gray-100">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+                <svg className="h-8 w-8 text-[#0D9488]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
               </div>
-            ))}
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">General Agency Award 2025</h3>
+              <p className="mt-2 text-gray-600">Great Eastern</p>
+            </div>
           </div>
         </div>
       </section>
