@@ -5,7 +5,7 @@ import {
   Car,
   Users,
   Building2,
-  Plane,
+  Home,
   Wrench,
   Shield,
   Award,
@@ -65,7 +65,7 @@ const services = [
     href: "/services/property",
   },
   {
-    icon: Plane,
+    icon: Home,
     title: "Domestic Maid Insurance",
     description:
       "Comprehensive coverage for your domestic helpers, including medical expenses, personal accident, and liability protection.",
