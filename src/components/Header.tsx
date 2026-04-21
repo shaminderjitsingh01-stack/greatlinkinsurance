@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
 
 const services = [
   { name: 'Motor Insurance', href: '/services/motor-insurance' },
   { name: 'Employee Benefits', href: '/services/employee-benefits' },
   { name: 'Property Insurance', href: '/services/property-insurance' },
-  { name: 'Travel Insurance', href: '/services/travel-insurance' },
+  { name: 'Domestic Maid Insurance', href: '/services/domestic-maid' },
   { name: 'Engineering Insurance', href: '/services/engineering-insurance' },
   { name: 'Surety Bonds', href: '/services/surety-bonds' },
 ];
@@ -118,8 +118,17 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA Button & Mobile Menu Toggle */}
-          <div className="flex items-center gap-3">
+          {/* CTA Buttons & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2">
+            <a
+              href="https://calendly.com/greatlinkinsurance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center px-4 py-2.5 border-2 border-teal-600 text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-all duration-200"
+            >
+              <Calendar className="w-4 h-4 mr-1.5" />
+              Book a Meeting
+            </a>
             <Link
               href="/quote"
               className="hidden sm:inline-flex items-center px-5 py-2.5 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700 hover:shadow-lg transition-all duration-200"
@@ -191,7 +200,17 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Mobile CTA */}
+            {/* Mobile CTAs */}
+            <a
+              href="https://calendly.com/greatlinkinsurance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sm:hidden mt-2 mx-4 px-5 py-3 border-2 border-teal-600 text-teal-600 font-semibold rounded-lg text-center flex items-center justify-center gap-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Calendar className="w-4 h-4" />
+              Book a Meeting
+            </a>
             <Link
               href="/quote"
               className="sm:hidden mt-2 mx-4 px-5 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md text-center"
