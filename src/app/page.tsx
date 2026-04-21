@@ -188,7 +188,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto"
             >
-              Singapore trusted corporate insurance agency
+              Singapore&apos;s trusted corporate insurance agency
             </motion.p>
 
             <motion.div
