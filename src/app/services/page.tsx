@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Car, Users, Building2, Plane, Wrench, Shield } from "lucide-react";
+import { Car, Users, Building2, Home, Wrench, Shield } from "lucide-react";
 
 const services = [
   {
@@ -21,10 +21,10 @@ const services = [
     href: "/services/property-insurance",
   },
   {
-    title: "Travel Insurance",
-    description: "Comprehensive travel protection for business trips and leisure travel worldwide.",
-    icon: Plane,
-    href: "/services/travel-insurance",
+    title: "Domestic Maid Insurance",
+    description: "Comprehensive coverage for your domestic helpers, including medical expenses, personal accident, and liability protection.",
+    icon: Home,
+    href: "/services/domestic-maid",
   },
   {
     title: "Engineering Insurance",
