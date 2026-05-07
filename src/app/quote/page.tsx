@@ -164,11 +164,19 @@ export default function QuotePage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const res = await fetch("/api/quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ contactInfo, answers }),
+    });
 
     setIsSubmitting(false);
-    setIsComplete(true);
+
+    if (res.ok) {
+      setIsComplete(true);
+    } else {
+      alert("Something went wrong. Please try again or email us directly at contact@greatlinkinsurance.com");
+    }
   };
 
   const isOptionSelected = (optionId: string) => {

@@ -80,22 +80,28 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      companyName: "",
-      insuranceType: "",
-      message: "",
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     });
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000);
+    setIsSubmitting(false);
+
+    if (res.ok) {
+      setSubmitSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        companyName: "",
+        insuranceType: "",
+        message: "",
+      });
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    } else {
+      alert("Something went wrong. Please try again or email us directly at contact@greatlinkinsurance.com");
+    }
   };
 
   return (
