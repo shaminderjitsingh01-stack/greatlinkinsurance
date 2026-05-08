@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function POST(req: NextRequest) {
   const { name, email, phone, companyName, insuranceType, message } = await req.json();
 
   try {
-    await resend.emails.send({
-      from: "GreatLink Insurance <no-reply@greatlinkinsurance.com>",
+    await transporter.sendMail({
+      from: `"GreatLink Insurance" <${process.env.SMTP_USER}>`,
       to: "contact@greatlinkinsurance.com",
       subject: `New Contact Form Submission from ${name}`,
       html: `
