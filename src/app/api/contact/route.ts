@@ -9,6 +9,9 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
 
 export async function POST(req: NextRequest) {
@@ -34,7 +37,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Contact email error:", error);
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error("Contact email error:", msg);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
