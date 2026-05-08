@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
       from: `"GreatLink Insurance" <${process.env.SMTP_USER}>`,
-      to: "shaminderjitsingh01@gmail.com",
+      to: "contact@greatlinkinsurance.com",
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -37,8 +37,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error);
-    console.error("Contact email error:", msg);
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("Contact email error:", error);
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
