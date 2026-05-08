@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
       from: `"GreatLink Insurance" <${process.env.SMTP_USER}>`,
-      to: "contact@greatlinkinsurance.com",
+      to: "shaminderjitsingh01@gmail.com",
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
