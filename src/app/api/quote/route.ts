@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import {
+  guardSubmission,
+  escapeHtml,
+  isValidEmail,
+  clamp,
+} from "@/lib/anti-spam";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -35,27 +41,75 @@ const labelMap: Record<string, string> = {
 };
 
 function toLabel(val: string | string[]): string {
-  if (Array.isArray(val)) return val.map((v) => labelMap[v] || v).join(", ");
-  return labelMap[val] || val;
+  if (Array.isArray(val))
+    return val.map((v) => labelMap[v] || escapeHtml(v)).join(", ");
+  return labelMap[val] || escapeHtml(val);
 }
 
 export async function POST(req: NextRequest) {
-  const { contactInfo, answers } = await req.json();
+  let body: {
+    contactInfo?: {
+      name?: string;
+      email?: string;
+      phone?: string;
+      company?: string;
+    };
+    answers?: Record<string, string | string[]>;
+    honeypot?: string;
+    renderedAt?: number;
+    turnstileToken?: string;
+  };
+
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+
+  const { contactInfo = {}, answers = {}, honeypot, renderedAt, turnstileToken } =
+    body;
+
+  // Anti-spam gate
+  const guard = await guardSubmission({ req, honeypot, renderedAt, turnstileToken });
+  if (!guard.ok) {
+    if (guard.silent) return NextResponse.json({ success: true });
+    return NextResponse.json({ error: guard.error }, { status: guard.status });
+  }
+
+  // Server-side validation
+  const name = clamp(contactInfo.name, 100).trim();
+  const email = clamp(contactInfo.email, 254).trim();
+  const phone = clamp(contactInfo.phone, 40).trim();
+  const company = clamp(contactInfo.company, 150).trim();
+
+  if (!name || !phone) {
+    return NextResponse.json({ error: "Name and phone are required" }, { status: 400 });
+  }
+  if (!isValidEmail(email)) {
+    return NextResponse.json({ error: "A valid email is required" }, { status: 400 });
+  }
+
+  const safe = {
+    name: escapeHtml(name),
+    email: escapeHtml(email),
+    phone: escapeHtml(phone),
+    company: escapeHtml(company),
+  };
 
   try {
     await transporter.sendMail({
       from: `"GreatLink Insurance" <${process.env.SMTP_USER}>`,
       to: "contact@greatlinkinsurance.com",
-      subject: `New Quote Request from ${contactInfo.name}`,
+      subject: `New Quote Request from ${safe.name}`,
       html: `
         <h2>New Quote Request</h2>
 
         <h3>Contact Details</h3>
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
-          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Name</td><td style="padding:8px;">${contactInfo.name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Email</td><td style="padding:8px;"><a href="mailto:${contactInfo.email}">${contactInfo.email}</a></td></tr>
-          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Phone</td><td style="padding:8px;">${contactInfo.phone}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Company</td><td style="padding:8px;">${contactInfo.company || "Not provided"}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Name</td><td style="padding:8px;">${safe.name}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Email</td><td style="padding:8px;"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
+          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Phone</td><td style="padding:8px;">${safe.phone}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;background:#f4f4f4;">Company</td><td style="padding:8px;">${safe.company || "Not provided"}</td></tr>
         </table>
 
         <h3>Insurance Needs</h3>

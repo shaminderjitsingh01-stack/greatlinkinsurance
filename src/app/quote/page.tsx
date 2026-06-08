@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Turnstile from '@/components/Turnstile';
 import {
   Car,
   Users,
@@ -108,6 +109,11 @@ export default function QuotePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
+  const [website, setWebsite] = useState(''); // honeypot — real users leave blank
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const renderedAt = useRef(Date.now());
+
+  const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   // Filter steps based on conditions
   const activeSteps = quizSteps.filter(
@@ -162,12 +168,24 @@ export default function QuotePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (turnstileEnabled && !turnstileToken) {
+      alert("Please complete the verification before submitting.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const res = await fetch("/api/quote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contactInfo, answers }),
+      body: JSON.stringify({
+        contactInfo,
+        answers,
+        honeypot: website,
+        renderedAt: renderedAt.current,
+        turnstileToken,
+      }),
     });
 
     setIsSubmitting(false);
@@ -494,6 +512,23 @@ export default function QuotePage() {
                       />
                     </div>
                   </div>
+
+                  {/* Honeypot — hidden from real users, bots fill it */}
+                  <div className="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                    />
+                  </div>
+
+                  {/* Bot verification */}
+                  <Turnstile onVerify={setTurnstileToken} onExpire={() => setTurnstileToken('')} />
 
                   {/* Navigation */}
                   <div className="flex justify-between pt-4">

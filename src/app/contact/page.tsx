@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, useRef, FormEvent, ChangeEvent } from "react";
+import Turnstile from "@/components/Turnstile";
 
 interface FormData {
   name: string;
@@ -40,6 +41,11 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [website, setWebsite] = useState(""); // honeypot — real users leave blank
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const renderedAt = useRef(Date.now());
+
+  const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -78,12 +84,22 @@ export default function ContactPage() {
 
     if (!validateForm()) return;
 
+    if (turnstileEnabled && !turnstileToken) {
+      alert("Please complete the verification before submitting.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        ...formData,
+        honeypot: website,
+        renderedAt: renderedAt.current,
+        turnstileToken,
+      }),
     });
 
     setIsSubmitting(false);
@@ -295,6 +311,23 @@ export default function ContactPage() {
                     <p className="mt-1 text-sm text-red-500">{errors.message}</p>
                   )}
                 </div>
+
+                {/* Honeypot — hidden from real users, bots fill it */}
+                <div className="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+
+                {/* Bot verification */}
+                <Turnstile onVerify={setTurnstileToken} onExpire={() => setTurnstileToken("")} />
 
                 {/* Submit Button */}
                 <button
