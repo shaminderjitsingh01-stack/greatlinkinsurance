@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, Check, FileCheck, Handshake, Award, FileText, Phone } from "lucide-react";
+import { Shield, Check, FileCheck, Handshake, Award, Phone } from "lucide-react";
 
 const coverageItems = [
   "Performance bonds for contract completion guarantees",
@@ -51,12 +51,6 @@ export default function SuretyBondsPage() {
               <p className="text-xl text-teal-100 mb-8">
                 Performance bonds, bid bonds, and guarantees to support your business contracts and tender submissions.
               </p>
-              <Link
-                href="/quote"
-                className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-              >
-                Get a Quote
-              </Link>
             </div>
             <div className="flex-1 hidden lg:flex justify-center">
               <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center">
@@ -158,13 +152,6 @@ export default function SuretyBondsPage() {
             Get competitive quotes for performance bonds, bid bonds, and other guarantees. Our team specializes in fast turnaround for urgent requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              Get a Quote
-            </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"

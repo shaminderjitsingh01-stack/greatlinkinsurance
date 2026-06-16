@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Phone, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 const services = [
   { name: 'Motor Insurance', href: '/services/motor-insurance' },
@@ -141,15 +141,6 @@ export default function Footer() {
                 >
                   <Phone className="w-5 h-5 text-teal-400 flex-shrink-0" />
                   +65 6047 0353
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:contact@greatlinkinsurance.com"
-                  className="flex items-center gap-3 text-gray-400 hover:text-teal-400 transition-colors duration-200"
-                >
-                  <Mail className="w-5 h-5 text-teal-400 flex-shrink-0" />
-                  contact@greatlinkinsurance.com
                 </a>
               </li>
               <li>

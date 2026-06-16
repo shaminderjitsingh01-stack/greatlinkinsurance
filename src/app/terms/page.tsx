@@ -111,7 +111,6 @@ export default function TermsOfServicePage() {
             <p className="text-gray-700 mb-2"><strong>GreatLink Insurance Agency Pte Ltd</strong></p>
             <p className="text-gray-600 mb-1">8 Burn Road, #14-08, Trivex</p>
             <p className="text-gray-600 mb-1">Singapore 369977</p>
-            <p className="text-gray-600 mb-1">Email: contact@greatlinkinsurance.com</p>
             <p className="text-gray-600">Phone: +65 6047 0353</p>
           </div>
         </div>

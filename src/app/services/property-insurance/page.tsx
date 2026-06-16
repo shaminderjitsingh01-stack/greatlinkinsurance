@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Building2, Check, Flame, Droplets, Shield, FileText, Phone } from "lucide-react";
+import { Building2, Check, Flame, Droplets, Shield, Phone } from "lucide-react";
 
 const coverageItems = [
   "Fire and lightning damage to buildings and contents",
@@ -51,12 +51,6 @@ export default function PropertyInsurancePage() {
               <p className="text-xl text-teal-100 mb-8">
                 Protect your business premises, equipment, and assets against unforeseen events and disasters.
               </p>
-              <Link
-                href="/quote"
-                className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-              >
-                Get a Quote
-              </Link>
             </div>
             <div className="flex-1 hidden lg:flex justify-center">
               <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center">
@@ -149,13 +143,6 @@ export default function PropertyInsurancePage() {
             Get comprehensive property coverage tailored to your business needs. Our experts will help you assess risks and find the right protection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              Get a Quote
-            </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"

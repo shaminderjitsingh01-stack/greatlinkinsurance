@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, Check, FileText, Calendar } from "lucide-react";
+import { Home, Check, Calendar } from "lucide-react";
 
 const coverageItems = [
   "Personal accident — death and permanent disability",
@@ -50,12 +50,6 @@ export default function DomesticMaidInsurancePage() {
                 Protect your domestic helper and your household with comprehensive MOM-compliant coverage — giving you peace of mind at home.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/quote"
-                  className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-                >
-                  Get a Quote
-                </Link>
                 <a
                   href="https://calendly.com/greatlinkinsurance"
                   target="_blank"
@@ -158,13 +152,6 @@ export default function DomesticMaidInsurancePage() {
             Ensure your domestic helper is protected and your household is compliant. Get a quote in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              Get a Quote
-            </Link>
             <a
               href="https://calendly.com/greatlinkinsurance"
               target="_blank"

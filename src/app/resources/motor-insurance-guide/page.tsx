@@ -190,12 +190,6 @@ export default function MotorInsuranceGuidePage() {
               Our experts can help you find the best coverage at competitive rates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/quote"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
-              >
-                Get a Quote
-              </Link>
               <a
                 href="tel:+6560470353"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"

@@ -129,13 +129,6 @@ export default function Header() {
               <Calendar className="w-4 h-4 mr-1.5" />
               Book a Meeting
             </a>
-            <Link
-              href="/quote"
-              className="hidden sm:inline-flex items-center px-5 py-2.5 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700 hover:shadow-lg transition-all duration-200"
-            >
-              Get a Quote
-            </Link>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -211,13 +204,6 @@ export default function Header() {
               <Calendar className="w-4 h-4" />
               Book a Meeting
             </a>
-            <Link
-              href="/quote"
-              className="sm:hidden mt-2 mx-4 px-5 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get a Quote
-            </Link>
           </div>
         </div>
       </nav>

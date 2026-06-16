@@ -17,7 +17,6 @@ import {
   MessageCircle,
   ChevronRight,
   ClipboardCheck,
-  ArrowRight,
   Calendar,
 } from "lucide-react";
 import Link from "next/link";
@@ -195,13 +194,6 @@ export default function Home() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <Link
-                href="/quote"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#0D9488] rounded-lg hover:bg-[#115E59] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Get a Quote
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Link>
               <a
                 href="https://calendly.com/greatlinkinsurance"
                 target="_blank"
@@ -419,7 +411,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Get a Quote & CTA Section (Merged) */}
+      {/* CTA Section */}
       <section className="relative py-20 sm:py-28 overflow-hidden">
         {/* Multi-layer gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0c4a44] to-[#0D9488]" />
@@ -490,14 +482,6 @@ export default function Home() {
             {/* CTA Buttons */}
             <motion.div variants={fadeInUp} className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/quote"
-                  className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-gray-900 bg-gradient-to-r from-white to-gray-100 rounded-xl hover:from-gray-50 hover:to-white transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl transform hover:-translate-y-1"
-                >
-                  <ClipboardCheck className="mr-2 w-5 h-5 text-[#0D9488]" />
-                  Get a Quote
-                  <ArrowRight className="ml-2 w-5 h-5 text-[#0D9488]" />
-                </Link>
                 <a
                   href="https://calendly.com/greatlinkinsurance"
                   target="_blank"
